@@ -10,17 +10,17 @@ from server.handler import AppHandler
 def seed_initial_tasks(chain: TaskChain):
     """Carga tareas de ejemplo al iniciar la aplicación."""
     chain.append_task(
-        "Estudiar estructuras de datos",
+        "Estudiar Estructuras de Datos",
         "alta",
-        "Revisar listas enlazadas y árboles binarios"
+        "Revisar listas"
     )
     chain.append_task(
-        "Hacer ejercicio",
+        "Hacer Ejercicio",
         "media",
-        "Correr 30 minutos en el parque"
+        "Ir a el gimnasio por 1 hora"
     )
     chain.append_task(
-        "Comprar ingredientes",
+        "Comprar Ingredientes",
         "baja",
         "Leche, huevos, pan y frutas"
     )
