@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestor de Tareas — Listas Simples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/frontend/css/styles.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="header-badge">Listas Simples</span>
+      <h1>Gestor de <span class="accent">Tareas</span></h1>
+      <p class="header-sub">Lista enlazada — cada nodo apunta a la siguiente tarea</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Formulario para agregar tarea -->
+    <div class="form-card">
+      <h2>Agregar nueva tarea</h2>
+      <div class="form-grid">
+        <div class="full">
+          <label for="inp-label">Nombre de la tarea</label>
+          <input type="text" id="inp-label" placeholder="Ej: Estudiar para el parcial"/>
+        </div>
+        <div>
+          <label for="inp-urgency">Prioridad</label>
+          <select id="inp-urgency">
+            <option value="alta">🔴 Alta</option>
+            <option value="media" selected>🟡 Media</option>
+            <option value="baja">🔵 Baja</option>
+          </select>
+        </div>
+        <div class="btn-wrap">
+          <label>&nbsp;</label>
+          <button class="btn-add" id="btn-submit">+ Agregar tarea</button>
+        </div>
+        <div class="full">
+          <label for="inp-summary">Descripción (opcional)</label>
+          <textarea id="inp-summary" rows="2" placeholder="Detalles adicionales sobre la tarea..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="stats-bar">
+      <div class="stat-pill"><span class="num" id="stat-total">0</span> tareas en total</div>
+      <div class="stat-pill"><span class="num" id="stat-done">0</span> completadas</div>
+      <div class="stat-pill"><span class="num" id="stat-pend">0</span> pendientes</div>
+    </div>
+
+    <!-- Lista de tareas -->
+    <p class="section-title">Lista de tareas pendientes</p>
+    <div id="task-list"></div>
+
+  </div>
+
+  <!-- Notificación toast -->
+  <div id="toast"></div>
+
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>
