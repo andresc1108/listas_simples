@@ -1,4 +1,4 @@
-/* ── Reset & Variables ─────────────────────────────────────────────────────── */
+/* Reset & Variables*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -17,7 +17,7 @@
   --p-baja-bg:  #eff6ff; --p-baja-fg:  #2d5fff; --p-baja-ring:  #2d5fff;
 }
 
-/* ── Base ── */
+/* Base*/
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--paper);
@@ -26,7 +26,7 @@ body {
   padding-bottom: 60px;
 }
 
-/* ── Header ── */
+/* Header*/
 header {
   background: var(--ink);
   color: var(--paper);
@@ -47,10 +47,10 @@ header h1 {
 header h1 .accent { color: var(--accent); }
 .header-sub { font-size: 13px; color: #aaa; margin-top: 6px; font-weight: 300; }
 
-/* ── Layout ── */
+/* Layout*/
 .container { max-width: 900px; margin: 0 auto; padding: 36px 24px 0; }
 
-/* ── Formulario ── */
+/* Formulario*/
 .form-card {
   background: var(--card-bg); border: 1.5px solid var(--border);
   border-radius: 12px; padding: 28px 28px 24px;
@@ -81,7 +81,7 @@ input[type="text"], textarea {
 }
 input[type="text"]:focus, textarea:focus { border-color: var(--accent2); background: #fff; }
 
-/* ── Selector SVG de prioridad ── */
+/* Selector SVG de prioridad*/
 .priority-selector { display: flex; gap: 10px; flex-wrap: wrap; }
 .priority-btn {
   flex: 1; min-width: 88px;
@@ -101,7 +101,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--accent2); backgro
 .priority-btn.active .priority-icon { transform: scale(1.15); }
 .priority-label { font-size: 12px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; }
 
-/* ── Botón agregar ── */
+/*  Botón agregar*/
 .btn-add {
   background: var(--accent); color: #fff; border: none; border-radius: 7px;
   padding: 11px 24px; font-family: 'Syne', sans-serif; font-weight: 700;
@@ -112,7 +112,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--accent2); backgro
 .btn-add:hover  { background: #c43d10; transform: translateY(-1px); }
 .btn-add:active { transform: translateY(0); }
 
-/* ── Estadísticas ── */
+/* Estadísticas*/
 .stats-bar { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
 .stat-pill {
   background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 20px;
@@ -126,7 +126,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--accent2); backgro
 .stat-done-pill .num { color: #2e7d32; }
 .stat-pend-pill .num { color: var(--accent2); }
 
-/* ── Título sección ── */
+/* Título sección */
 .section-title {
   font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
   margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
@@ -136,7 +136,7 @@ input[type="text"]:focus, textarea:focus { border-color: var(--accent2); backgro
   background: var(--accent2); border-radius: 2px; flex-shrink: 0;
 }
 
-/* ── Tarjetas de tarea ── */
+/* Tarjetas de tarea */
 #task-list { display: flex; flex-direction: column; gap: 10px; }
 .task-card {
   background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 10px;

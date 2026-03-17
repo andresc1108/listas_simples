@@ -2,7 +2,7 @@
 
 const API_BASE = "";
 
-// ── SVG inline por prioridad (se inyecta en cada tarjeta) ─────────────────────
+// SVG inline por prioridad
 const PRIORITY_ICONS = {
   alta: `
     <svg class="task-priority-icon alta" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Prioridad alta">
@@ -33,7 +33,7 @@ const ICON_EMPTY = `
     <path d="M16 22h16M16 29h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
   </svg>`;
 
-// ── Inicializa el selector SVG de prioridad ───────────────────────────────────
+// Inicializa el selector SVG de prioridad
 function initPrioritySelector() {
   const nativeSelect = document.getElementById("inp-urgency");
   const buttons      = document.querySelectorAll(".priority-btn");
@@ -48,7 +48,7 @@ function initPrioritySelector() {
   });
 }
 
-// ── Carga y renderiza todas las tareas desde el servidor ──────────────────────
+// Carga y renderiza todas las tareas desde el servidor
 async function loadTasks() {
   try {
     const res  = await fetch(API_BASE + "/api/tasks");
@@ -59,7 +59,7 @@ async function loadTasks() {
   }
 }
 
-// ── Construye y muestra las tarjetas de tarea en el DOM ───────────────────────
+// Construye y muestra las tarjetas de tarea en el DOM 
 function renderTasks(tasks) {
   const list = document.getElementById("task-list");
   list.innerHTML = "";
@@ -103,7 +103,7 @@ function renderTasks(tasks) {
   });
 }
 
-// ── Envía al servidor la solicitud de agregar nueva tarea ─────────────────────
+// Envía al servidor la solicitud de agregar nueva tarea 
 async function addTask() {
   const label   = document.getElementById("inp-label").value.trim();
   const urgency = document.getElementById("inp-urgency").value;
@@ -138,7 +138,7 @@ async function addTask() {
   }
 }
 
-// ── Envía al servidor la solicitud de marcar una tarea como completada ─────────
+// Envía al servidor la solicitud de marcar una tarea como completada 
 async function completeTask(position) {
   try {
     const res  = await fetch(API_BASE + "/api/tasks/complete", {
@@ -154,7 +154,7 @@ async function completeTask(position) {
   }
 }
 
-// ── Muestra una notificación temporal en la esquina ───────────────────────────
+// Muestra una notificación temporal en la esquina
 function showToast(msg, type = "") {
   const toast = document.getElementById("toast");
   toast.textContent = msg;
@@ -163,12 +163,12 @@ function showToast(msg, type = "") {
   toast._timer = setTimeout(() => { toast.className = ""; }, 3000);
 }
 
-// ── Escapa caracteres HTML para evitar XSS ────────────────────────────────────
+// Escapa caracteres HTML para evitar XSS
 function escHtml(str) {
   return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
-// ── Inicialización ────────────────────────────────────────────────────────────
+// Inicialización 
 document.addEventListener("DOMContentLoaded", () => {
   initPrioritySelector();
   loadTasks();
